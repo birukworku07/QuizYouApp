@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Montserrat:wght@900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="quiz-container">
+        <button class="start-btn">
+            Start
+        </button>
+
+        <div class="game-over">
+            <p class="game-over-par">Game Over!</p>
+            <div class="restart-menu-btn">
+                <button class="rm-btn rstrt-btn">
+                    Restart
+                </button>
+                <button class="rm-btn mnu-btn">
+                    Menu
+                </button>
+            </div>
+        </div>
+
+        <div class="mini-container bfr-strt-btn-trigger">
+            <div id="question">
+                <p id="statement"></p>
+            </div>
+
+            <div id="choice">
+                <button id="choiceA" class="choice-btn">A</button>
+                <button id="choiceB" class="choice-btn">B</button>
+                <button id="choiceC" class="choice-btn">C</button>
+                <button id="choiceD" class="choice-btn">D</button>
+            </div>
+
+        </div>
+
+        <div class="categories strt-btn-trigger">
+            <label for="selectingCategs" class="labels">Select a Category:</label> <br>
+            <select name="categories" id="selectingCategs" class="labels cats">
+                <option value="-1">Choose Category</option>
+                <option value="9">General Knowledge</option>
+                <option value="11">Entertainment: Film</option>
+                <option value="17">Science & Nature</option>
+                <option value="18">Science: Computers</option>
+                <option value="26">Celebrities</option>
+                <option value="21">Sports</option>
+            </select>
+
+            <br><label for="noQuestion" class="labels">Number of Questions:</label><br>
+            <select name="number" id="noQuestions" class="labels cats">
+                <option value="-1">Num Questions</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15"> 15</option>
+                <option value="20">20</option>
+
+            </select>
+
+            <br><label for="difficulty" class="labels">Level of Difficulty:</label><br>
+            <select name="level" id="difficulty" class="labels cats">
+                <option value="-1">Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button class="submit-btn">LET'S GO!</button>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

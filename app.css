@@ -1,0 +1,219 @@
+body {
+  border: 1px solid red;
+  background-color: #9c73da;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#quiz-container {
+  border-radius: 40px;
+  padding: 4rem;
+  background-color: rgb(240, 155, 140);
+  height: 25rem;
+  width: 45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-btn {
+  border: 1px solid rgb(236, 206, 167);
+  padding: 1rem 10.5rem;
+  font-family: "Akaya Telivigala", cursive;
+  color: rgb(163, 59, 59);
+  font-size: 2rem;
+  border-radius: 20px;
+  /* background-color: white; */
+  transition: background-color, 1s, ease-in-out, 0.5s;
+}
+
+.start-btn:hover {
+  background-color: rgb(236, 206, 167);
+}
+
+.strt-btn-trigger {
+  display: none;
+}
+#question {
+  font-size: 2rem;
+  border: 2px solid green;
+  width: 40rem;
+  font-family: "Akaya Telivigala", cursive;
+  color: rgb(163, 59, 59);
+  text-align: center;
+}
+
+#choice {
+  border: 1px solid blue;
+  height: 12.5rem;
+  width: 45rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.choice-btn {
+  padding: 1rem 5rem;
+  width: 20rem;
+  border: 1px solid rgb(236, 206, 167);
+  border-radius: 20px;
+  font-family: "Akaya Telivigala", cursive;
+  color: rgb(163, 59, 59);
+  font-size: 1.5rem;
+}
+
+.submit-btn {
+  padding: 1rem 4rem;
+  border: 1px solid rgb(236, 206, 167);
+  border-radius: 20px;
+  font-family: "Akaya Telivigala", cursive;
+  color: rgb(163, 59, 59);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.choice-btn:hover {
+  transition: background-color, 1s, ease-in-out, 0.5s;
+  padding: 1.2rem 5.5rem;
+  background-color: rgb(236, 206, 167);
+}
+
+.submit-btn:hover {
+  transition: background-color, 1s, ease-in-out, 0.5s;
+  padding: 1.5rem 10.5rem;
+  background-color: rgb(236, 206, 167);
+}
+
+.bfr-strt-btn-trigger {
+  display: none;
+}
+
+.question-choices {
+  border: 10px solid yellow;
+  width: 45rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-over {
+  display: none;
+}
+
+.last-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 25rem;
+  width: 45rem;
+}
+
+.restart-menu-btn {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 45rem;
+}
+
+.rm-btn {
+  border: 1px solid rgb(236, 206, 167);
+  padding: 1rem 5rem;
+  font-family: "Akaya Telivigala", cursive;
+  color: rgb(163, 59, 59);
+  font-size: 2rem;
+  border-radius: 20px;
+  /* background-color: white; */
+  transition: background-color, 1s, ease-in-out, 0.5s;
+}
+.rm-btn:hover {
+  background-color: rgb(236, 206, 167);
+  padding: 1.5rem 5.5rem;
+}
+
+.game-over-par {
+  font-size: 2.5rem;
+  font-family: "Akaya Telivigala", cursive;
+  color: rgb(163, 59, 59);
+}
+
+.categoriesDisplay {
+  height: 25rem;
+  width: 45rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.labels {
+  font-family: "Akaya Telivigala", cursive;
+  color: rgb(163, 59, 59);
+  font-size: 1.5rem;
+}
+.cats {
+  width: 21.5rem;
+  border-radius: 10px;
+  background-color: rgb(236, 206, 167);
+  padding: 0.8rem 0;
+}
+@media (max-width: 869px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 638px) {
+  #quiz-container {
+    width: 30rem;
+    height: 45rem;
+    padding: 2rem;
+  }
+  .categoriesDisplay {
+    width: 30rem;
+    height: 45rem;
+    padding: 2rem;
+  }
+  #choice {
+    height: 12.5rem;
+    width: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 22.5rem;
+    height: 45rem;
+  }
+  .question-choices {
+    width: 22.5rem;
+    height: 35rem;
+  }
+}
+
+@media (max-width: 455px) {
+  #quiz-container {
+    width: 25rem;
+    height: 45rem;
+    padding: 4rem 2rem;
+  }
+  .categoriesDisplay {
+    width: 25rem;
+    height: 45rem;
+    padding: 4rem 2rem;
+  }
+}
+@media (max-width: 360px) {
+  html {
+    font-size: 9px;
+  }
+}
