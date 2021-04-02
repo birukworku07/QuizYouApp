@@ -243,7 +243,7 @@ body {
     /* border: 1px solid red; */
   }
   .rstrt-btn {
-    margin: 1.5rem;
+    margin: 4.5rem;
   }
   .categoriesDisplay {
     width: 25rem;
@@ -254,8 +254,5 @@ body {
 @media (max-width: 360px) {
   html {
     font-size: 9px;
-  }
-  .rstrt-btn {
-    margin: 2rem;
   }
 }
