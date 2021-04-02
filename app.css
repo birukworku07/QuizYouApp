@@ -1,5 +1,4 @@
 body {
-  border: 1px solid red;
   margin: 0;
   background-color: #9c73da;
   width: 100vw;
@@ -44,7 +43,7 @@ body {
 #question {
   font-size: 2rem;
   /* border: 2px solid green; */
-  width: 40rem;
+  width: 35rem;
   font-family: "Akaya Telivigala", cursive;
   color: rgb(163, 59, 59);
   text-align: center;
@@ -190,6 +189,9 @@ body {
     height: 45rem;
     padding: 2rem;
   }
+  #question {
+    width: 25rem;
+  }
   .categoriesDisplay {
     width: 30rem;
     height: 45rem;
@@ -216,6 +218,9 @@ body {
     width: 25rem;
     height: 45rem;
     padding: 4rem 2rem;
+  }
+  #question {
+    width: 17rem;
   }
   .categoriesDisplay {
     width: 25rem;
