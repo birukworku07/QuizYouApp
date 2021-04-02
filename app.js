@@ -8,6 +8,7 @@ const miniContainer = document.querySelector(".mini-container");
 const questionStatment = document.querySelector("#statement");
 const body = document.body;
 const gameOverDiv = document.querySelector(".game-over");
+const gameOverPar = document.querySelector(".game-over-par");
 const restartButton = document.querySelector(".rstrt-btn");
 const menuButton = document.querySelector(".mnu-btn");
 const letsGoButton = document.querySelector(".submit-btn");
@@ -16,7 +17,7 @@ const selectingCategs = document.querySelector("#selectingCategs");
 const noQuestions = document.querySelector("#noQuestions");
 const difficulty = document.querySelector("#difficulty");
 const maxChance = 2;
-
+let scoreReport = null;
 let category = "";
 let numQuestions = "";
 let level = "";
@@ -26,6 +27,8 @@ let counter = 0;
 let currentChance = null;
 let resultHeader = null;
 let uniqueQuestions = [];
+let score = 0;
+
 function randomize() {
   return Math.floor(Math.random() * numQuestions);
 }
@@ -112,7 +115,42 @@ async function fetch() {
 }
 
 function gameOver() {
-  console.log("Game Over!");
+  console.log("Game Over! YOU LOSE!");
+  //last-state appearing
+  if (scoreReport === null) {
+    scoreReport = document.createElement("h1");
+    scoreReport.classList.add("game-over-par");
+  }
+
+  scoreReport.innerText = `Your Score is: ${score}/${numQuestions}`;
+  //scoreReport.classList.add("game-over-par");
+  gameOverDiv.insertBefore(
+    scoreReport,
+    gameOverDiv.firstElementChild.nextSibling
+  );
+  gameOverDiv.classList.toggle("last-state");
+  gameOverDiv.classList.toggle("game-over");
+  //question and choice disappering
+  miniContainer.classList.toggle("bfr-strt-btn-trigger");
+  miniContainer.classList.toggle("question-choices");
+  console.log("toggled question choices");
+  resultHeader.remove();
+  body.style.backgroundColor = "#9c73da";
+}
+
+function doneWithAll() {
+  gameOverPar.innerText = "Congrats! You made it to the other side!";
+  if (scoreReport === null) {
+    scoreReport = document.createElement("h1");
+    scoreReport.classList.add("game-over-par");
+  }
+
+  scoreReport.innerText = `Your Score is: ${score}/${numQuestions}`;
+
+  gameOverDiv.insertBefore(
+    scoreReport,
+    gameOverDiv.firstElementChild.nextSibling
+  );
   //last-state appearing
   gameOverDiv.classList.toggle("last-state");
   gameOverDiv.classList.toggle("game-over");
@@ -129,10 +167,12 @@ function correct() {
 
   if (!resultHeader) {
     resultHeader = document.createElement("h1");
+    resultHeader.classList.add("result-labels");
   }
 
   resultHeader.innerText = "CORRECT!";
   body.insertBefore(resultHeader, body.firstChild);
+  ++score;
 }
 
 function wrong() {
@@ -143,10 +183,12 @@ function wrong() {
   } else {
     if (!resultHeader) {
       resultHeader = document.createElement("h1");
+      resultHeader.classList.add("result-labels");
     }
 
     let remainingChance = maxChance - currentChance;
-    resultHeader.innerText = `WRONG!${remainingChance} trial(s) left`;
+    resultHeader.innerText = `WRONG! ${remainingChance} more trial left`;
+    score -= 0.5;
     body.insertBefore(resultHeader, body.firstChild);
   }
 }
@@ -157,7 +199,7 @@ function nextQuestion() {
     /*TODO: Congragulations state showing the score
      *score reduces by 0.5 if you miss a question once
      */
-    gameOver();
+    doneWithAll();
   } else {
     setTimeout(() => {
       generateQuestion();
@@ -175,6 +217,7 @@ restartButton.addEventListener("click", (e) => {
   miniContainer.classList.toggle("bfr-strt-btn-trigger");
   uniqueQuestions = [];
   counter = 0;
+  score = 0;
   generateQuestion();
 });
 
@@ -182,10 +225,15 @@ menuButton.addEventListener("click", (e) => {
   //disappering the last-state
   gameOverDiv.classList.toggle("last-state");
   gameOverDiv.classList.toggle("game-over");
-  /* TODO: We want to go to the 2nd state
+  /* TODO: We want to go to the 2nd state(Menu state)
    */
-  startButton.classList.toggle("strt-btn-trigger");
+  menuPage.classList.toggle("strt-btn-trigger");
+  menuPage.classList.toggle("categoriesDisplay");
+  uniqueQuestions = [];
+  counter = 0;
+  score = 0;
 });
+
 startButton.addEventListener("click", (e) => {
   console.log("Clicked");
   startButton.classList.toggle("strt-btn-trigger");
