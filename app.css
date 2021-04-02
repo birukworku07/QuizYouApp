@@ -121,11 +121,12 @@ body {
 }
 
 .restart-menu-btn {
-  border: 2px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   width: 45rem;
+  height: 25rem;
   outline: none;
 }
 
@@ -149,6 +150,8 @@ body {
   font-size: 2.5rem;
   font-family: "Akaya Telivigala", cursive;
   color: rgb(163, 59, 59);
+  width: 35rem;
+  text-align: center;
   /* border: 1px solid red; */
 }
 
@@ -192,7 +195,7 @@ body {
   }
   .restart-menu-btn {
     width: 30rem;
-    height: 15rem;
+    height: 100rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -200,6 +203,10 @@ body {
   }
   #question {
     width: 25rem;
+  }
+  .game-over-par {
+    width: 25rem;
+    /* border: 1px solid red; */
   }
   .categoriesDisplay {
     width: 30rem;
@@ -231,8 +238,12 @@ body {
   #question {
     width: 17rem;
   }
+  .game-over-par {
+    width: 17rem;
+    /* border: 1px solid red; */
+  }
   .restart-menu-btn {
-    width: 30rem;
+    height: 350rem;
   }
   .categoriesDisplay {
     width: 25rem;
