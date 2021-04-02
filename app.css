@@ -121,7 +121,7 @@ body {
 }
 
 .restart-menu-btn {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -136,6 +136,7 @@ body {
   color: rgb(163, 59, 59);
   font-size: 2rem;
   border-radius: 20px;
+  width: 20rem;
   /* background-color: white; */
   transition: background-color, 0.5s, ease-in-out, 0.5s;
 }
@@ -189,6 +190,14 @@ body {
     height: 45rem;
     padding: 2rem;
   }
+  .restart-menu-btn {
+    width: 30rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
   #question {
     width: 25rem;
   }
@@ -221,6 +230,9 @@ body {
   }
   #question {
     width: 17rem;
+  }
+  .restart-menu-btn {
+    width: 30rem;
   }
   .categoriesDisplay {
     width: 25rem;
