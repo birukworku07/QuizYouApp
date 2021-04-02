@@ -242,8 +242,8 @@ body {
     width: 17rem;
     /* border: 1px solid red; */
   }
-  .restart-menu-btn {
-    height: 350rem;
+  .rstrt-btn {
+    margin: 1.5rem;
   }
   .categoriesDisplay {
     width: 25rem;
@@ -254,5 +254,8 @@ body {
 @media (max-width: 360px) {
   html {
     font-size: 9px;
+  }
+  .rstrt-btn {
+    margin: 2rem;
   }
 }
