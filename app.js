@@ -116,6 +116,7 @@ async function fetch() {
 
 function gameOver() {
   console.log("Game Over! YOU LOSE!");
+  gameOverPar.innerText = "Game Over! You Lose, LOSER!";
   //last-state appearing
   if (scoreReport === null) {
     scoreReport = document.createElement("h1");
